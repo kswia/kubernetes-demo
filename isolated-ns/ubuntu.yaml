@@ -8,3 +8,5 @@ spec:
   containers:
     - name: ubuntuapp
       image: ubuntu-upstart
+      command: ["tail"]
+      args: ["-f", "/dev/null"]
