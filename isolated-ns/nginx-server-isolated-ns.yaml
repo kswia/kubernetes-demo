@@ -2,6 +2,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: nginx-server-isolated-ns
+  namespace: isolated-ns
 spec:
   replicas: 2 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
@@ -23,6 +24,7 @@ metadata:
   labels:
     app: nginx
   name: nginx-server-isolated-ns-svc
+  namespace: isolated-ns
 spec:
   ports:
   - port: 80

@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: NetworkPolicy
 metadata:
  name: network-policy
+ namespace: isolated-ns
 spec:
  podSelector:
   matchLabels:

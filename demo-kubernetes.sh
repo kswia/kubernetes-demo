@@ -65,8 +65,8 @@ echo
 
 echo '#Creation of a web service in this isolated namespace'
 echo -------------------------------------------------------
-echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns'
-kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns
+echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml'
+kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml
 read -p "Press enter to continue" pause
 echo
 
@@ -77,8 +77,8 @@ echo
 
 echo '#Creation of an ubuntu app in the isolated namespace'
 echo -------------------------------------------------------
-echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns'
-kubectl create -f isolated-ns/ubuntu.yaml -n isolated-ns
+echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml'
+kubectl create -f isolated-ns/ubuntu.yaml
 read -p "Press enter to continue" pause
 echo
 
@@ -101,8 +101,8 @@ echo
 
 echo '#Apply network policy to allow traffic between ubuntupapp and web-servers in isolated ns'
 echo ------------------------------------------------------------------------------------------
-echo 'kubectl create -f isolated-ns/network-policy.yaml -n isolated-ns'
-kubectl create -f isolated-ns/network-policy.yaml -n isolated-ns
+echo 'kubectl create -f isolated-ns/network-policy.yaml'
+kubectl create -f isolated-ns/network-policy.yaml
 read -p "Press enter to continue" pause
 echo
 
@@ -154,9 +154,9 @@ echo
 echo '#Cleanup of the objects created during the demo'
 echo ---------------------------------------------------------------------
 kubectl delete -f default-pod-service/contrail-frontend.yaml
-kubectl delete -f isolated-ns/network-policy.yaml -n isolated-ns
-kubectl delete -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns
-kubectl delete -f isolated-ns/ubuntu.yaml -n isolated-ns
+kubectl delete -f isolated-ns/network-policy.yaml
+kubectl delete -f isolated-ns/nginx-server-isolated-ns.yaml
+kubectl delete -f isolated-ns/ubuntu.yaml
 kubectl delete -f isolated-ns/isolated-ns.yaml
 kubectl delete -f ingress-services/web-app-fanout-ingress.yaml
 kubectl delete -f ingress-services/web-app-svc-qa.yaml
